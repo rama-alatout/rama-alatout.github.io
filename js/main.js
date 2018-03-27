@@ -59,6 +59,7 @@ $(document).ready(function() {
             this.showNavPosition();
             this.easyPaginateResarch();
             this.skills();
+            this.contactSend();
         },
 
         contactSend: function() {
@@ -68,7 +69,8 @@ $(document).ready(function() {
 
             var body = message + " \n[Reply To: " + email + "]";
             var subject = "New message from: " + name;
-            $("#send-msg").click(function() {
+            $("#send-msg").click(function(e) {
+                e.stopPropagation();
                 window.location.href = "mailto:alatour@mcmaster.ca?subject=" + subject + "&body=" + body;
             });
         },
