@@ -61,6 +61,18 @@ $(document).ready(function() {
             this.skills();
         },
 
+        contactSend: function() {
+            var name = $("#contact-name").val();
+            var email = $("#contact-email").val();
+            var message = $("#contact-message").val();
+
+            var body = message + " \n[Reply To: " + email + "]";
+            var subject = "New message from: " + name;
+            $("#send-msg").click(function() {
+                window.location.href = "mailto:alatour@mcmaster.ca?subject=" + subject + "&body=" + body;
+            });
+        },
+
         skills: function() {
             $(".labSkills").hide();
             $(".techSkills").hide();
